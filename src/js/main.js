@@ -55,15 +55,10 @@ const lama = Object.entries(localStorage);
 console.log(lama);
 console.log(lama.length);
 
-// lama.forEach((element) => {
-//     history.appendChild(li);
-//     li.innerHTML = element;
-//     console.log(element);
-// });
-
 for (let i = 0; i < lama.length; i++) {
     const li = document.createElement('li');
+    const alpaca = lama[i];
     li.id = i;
     history.appendChild(li);
-    li.textContent = lama[i];
+    li.textContent = `W dniu ${alpaca[0]} wypiłeś ${alpaca[1]} szklanek`;
 }
