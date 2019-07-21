@@ -19,12 +19,19 @@ if ('serviceWorker' in navigator) {
 const counterNumber = document.querySelector(".counter__number--js");
 const buttonAdd = document.querySelector(".button__add--js");
 const buttonRemove = document.querySelector(".button__remove--js");
+const buttonHistory = document.querySelector(".button__history--js");
+const buttonClose = document.querySelector(".button__close--js");
 const key = new Date().toISOString().slice(0, 10)
 const history = document.querySelector(".history");
-
-
+const toggleHistory = document.querySelector(".wrapper--js");
 let counterValue = 0;
 counterNumber.innerHTML = counterValue;
+
+
+// Jeśli pod kluczem niczego nie ma - przypisz 0 
+if (localStorage.length === 0) {
+    localStorage.setItem(key, 0);
+}
 
 buttonAdd.addEventListener('click', (e) => {
     if (counterValue < 99) {
@@ -46,19 +53,22 @@ buttonRemove.addEventListener('click', (e) => {
     }
 })
 
-//! TESTY TRWAJĄ
-//? ---------
-// localStorage.setItem('test', 'wartość');
-// localStorage.setItem('test1', 'wartość2');
-// localStorage.setItem('test3', 'wartość3');
-const lama = Object.entries(localStorage);
-console.log(lama);
-console.log(lama.length);
 
-for (let i = 0; i < lama.length; i++) {
-    const li = document.createElement('li');
-    const alpaca = lama[i];
-    li.id = i;
-    history.appendChild(li);
-    li.textContent = `W dniu ${alpaca[0]} wypiłeś ${alpaca[1]} szklanek`;
-}
+buttonHistory.addEventListener('click', (e) => {
+    toggleHistory.classList.toggle('wrapper--visible');
+    history.innerHTML = "";
+    // wypisuje historię tworząc nowe elementy listy
+    for (let i = 0; i < localStorage.length; i++) {
+        const li = document.createElement('li');
+        let localStorageKey = localStorage.key(i);
+        let localStorageValue = localStorage.getItem(key);
+        li.id = i;
+        history.appendChild(li);
+        li.textContent = `W dniu ${localStorageKey} wypiłeś ${localStorageValue} szklanek`;
+    }
+
+})
+
+buttonClose.addEventListener('click', (e) => {
+    toggleHistory.classList.toggle('wrapper--visible');
+})
