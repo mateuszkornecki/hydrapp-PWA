@@ -20,19 +20,25 @@ if ('serviceWorker' in navigator) {
 const counterNumber = document.querySelector(".counter__number--js");
 const buttonAdd = document.querySelector(".button__add--js");
 const buttonRemove = document.querySelector(".button__remove--js");
-counterNumber.innerHTML = 0;
+const key = new Date().toISOString().slice(0, 10)
+let value = 0;
+counterNumber.innerHTML = value;
 
 buttonAdd.addEventListener('click', (e) => {
-    if (counterNumber.innerHTML < 99) {
+    if (value < 99) {
         counterNumber.innerHTML++;
+        value++;
+        localStorage.setItem(key, value);
     } else {
         console.log('Nie możliwe!')
     }
 })
 
 buttonRemove.addEventListener('click', (e) => {
-    if (counterNumber.innerHTML > 0) {
+    if (value > 0) {
         counterNumber.innerHTML--;
+        value--;
+        localStorage.setItem(key, value);
     } else {
         console.log('Nie wypiłeś nawet jednej szklanki!');
     }
