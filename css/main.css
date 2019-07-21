@@ -5,6 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap&subset=latin-ext");
 html {
   line-height: 1.15;
   /* 1 */
@@ -336,6 +337,8 @@ body {
           align-items: center; }
 
 .buttons {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -345,10 +348,16 @@ body {
           flex-direction: column;
   padding: 48px 79px 0px; }
   .buttons__add {
+    background-color: #FFFFFF;
+    font-size: 18px;
     margin-bottom: 36px;
     height: 47px;
-    width: 216px; }
+    width: 216px;
+    border: none;
+    border-radius: 4px; }
   .buttons__remove {
+    color: #F5E5E7;
+    font-size: 14px;
     background-color: #3767AD;
     border: none; }
 
