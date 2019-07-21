@@ -1,5 +1,6 @@
 @import "_normalize";
 @import "_variables";
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap&subset=latin-ext');
 html {
     box-sizing: border-box;
 }
@@ -21,15 +22,23 @@ body {
 }
 
 .buttons {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
     display: flex;
     flex-direction: column;
     padding: 48px 79px 0px;
     &__add {
+        background-color: #FFFFFF;
+        font-size: 18px;
         margin-bottom: 36px;
         height: 47px;
         width: 216px;
+        border: none;
+        border-radius: 4px;
     }
     &__remove {
+        color: $white;
+        font-size: 14px;
         background-color: $background-blue;
         border: none;
     }
