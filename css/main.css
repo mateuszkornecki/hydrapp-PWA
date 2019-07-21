@@ -334,11 +334,11 @@ body {
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500; }
 
 .buttons {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -360,5 +360,26 @@ body {
     font-size: 14px;
     background-color: #3767AD;
     border: none; }
+
+.counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.counter__water {
+  position: relative; }
+
+.counter__number {
+  font-size: 112px;
+  position: absolute;
+  font-size: 5rem;
+  color: #000000;
+  bottom: 50%; }
 
 /*# sourceMappingURL=main.css.map */
