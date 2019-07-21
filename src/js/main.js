@@ -64,7 +64,7 @@ buttonHistory.addEventListener('click', (e) => {
         let localStorageValue = localStorage.getItem(key);
         li.id = i;
         history.appendChild(li);
-        li.textContent = `W dniu ${localStorageKey} wypiłeś ${localStorageValue} szklanek`;
+        li.textContent = `W dniu ${localStorageKey} wypiłeś ${localStorageValue} szklanki`;
     }
 
 })
