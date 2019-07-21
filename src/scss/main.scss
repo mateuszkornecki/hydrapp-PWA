@@ -19,11 +19,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
 }
 
 .buttons {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
     display: flex;
     flex-direction: column;
     padding: 48px 79px 0px;
@@ -42,4 +42,22 @@ body {
         background-color: $background-blue;
         border: none;
     }
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter__water {
+    position: relative;
+}
+
+.counter__number {
+    font-size: 112px;
+    position: absolute;
+    font-size: 5rem;
+    color: #000000;
+    bottom: 50%;
 }
