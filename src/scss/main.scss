@@ -1,16 +1,36 @@
 @import "_normalize";
 @import "_variables";
-
-
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
 }
 
 body {
-  color: $yellow;
-  background: $violet;
+    background: $background-blue;
+    color: $white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    padding: 48px 79px 0px;
+    &__add {
+        margin-bottom: 36px;
+        height: 47px;
+        width: 216px;
+    }
+    &__remove {
+        background-color: $background-blue;
+        border: none;
+    }
 }
