@@ -382,4 +382,8 @@ body {
   color: #000000;
   bottom: 50%; }
 
+.history {
+  position: absolute;
+  bottom: 16px; }
+
 /*# sourceMappingURL=main.css.map */
