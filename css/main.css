@@ -338,7 +338,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 500; }
 
-.buttons {
+.button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -347,7 +347,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 48px 79px 0px; }
-  .buttons__add {
+  .button__add {
     background-color: #FFFFFF;
     font-size: 18px;
     margin-bottom: 36px;
@@ -355,7 +355,7 @@ body {
     width: 216px;
     border: none;
     border-radius: 4px; }
-  .buttons__remove {
+  .button__remove {
     color: #F5E5E7;
     font-size: 14px;
     background-color: #3767AD;
