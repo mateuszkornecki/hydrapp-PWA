@@ -16,88 +16,98 @@ body {
     background: $background-blue;
     color: $white;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
 }
 
-.button {
+.main {
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 48px 79px 0px;
-    &__add {
-        background-color: #FFFFFF;
-        font-size: 18px;
-        margin-bottom: 36px;
-        height: 47px;
-        width: 216px;
-        border: none;
-        border-radius: 4px;
-    }
-    &__close {
-        color: black;
-        font-size: 14px;
-        background-color: white;
-        border: none;
-    }
-    &__history {
-        position: absolute;
-        bottom: 16px;
-        color: $white;
-        font-size: 14px;
-        background-color: $background-blue;
-        border: none;
-    }
-    &__remove {
-        color: $white;
-        font-size: 14px;
-        background-color: $background-blue;
-        border: none;
-    }
+    align-items: center;
+    justify-content: center;
 }
 
 .counter {
+    background: url(../assets/img/water-glass.svg);
+    background-size: contain;
+    height: 280px;
+    width: 280px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
-.counter__water {
-    position: relative;
-}
-
-.counter__number {
-    font-size: 112px;
-    position: absolute;
-    font-size: 5rem;
-    color: #000000;
-    bottom: 50%;
-}
-
-.history {
-    list-style-type: none;
-    padding: 32px 0 0 0;
-    margin: 0;
-}
-
-.wrapper {
-    color: black;
-    background-color: white;
-    display: none;
-    position: absolute;
-    z-index: 2;
-    padding: 16px;
-    border-radius: 8px;
-    min-height: 60vh;
-    &--visible {
-        display: block;
-    }
-}
-
-.lama {
-    display: flex;
-    justify-content: space-between;
-}
+// !OLD
+// .button {
+//     display: flex;
+//     flex-direction: column;
+//     padding: 48px 79px 0px;
+//     &__add {
+//         background-color: #FFFFFF;
+//         font-size: 18px;
+//         margin-bottom: 36px;
+//         height: 47px;
+//         width: 216px;
+//         border: none;
+//         border-radius: 4px;
+//         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//     }
+//     &__close {
+//         color: black;
+//         font-size: 14px;
+//         background-color: white;
+//         border: none;
+//     }
+//     &__history {
+//         position: absolute;
+//         bottom: 16px;
+//         color: $white;
+//         font-size: 14px;
+//         background-color: $background-blue;
+//         border: none;
+//     }
+//     &__remove {
+//         color: $white;
+//         font-size: 14px;
+//         background-color: $background-blue;
+//         border: none;
+//     }
+// }
+// .counter {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+// .counter__water {
+//     position: relative;
+// }
+// .counter__number {
+//     font-size: 112px;
+//     position: absolute;
+//     font-size: 5rem;
+//     color: #000000;
+//     bottom: 50%;
+// }
+// .history {
+//     list-style-type: none;
+//     padding: 32px 0 0 0;
+//     margin: 0;
+// }
+// .wrapper {
+//     color: black;
+//     background-color: white;
+//     display: none;
+//     position: absolute;
+//     z-index: 2;
+//     padding: 16px;
+//     border-radius: 8px;
+//     min-height: 60vh;
+//     &--visible {
+//         display: block;
+//     }
+// }
+// .lama {
+//     display: flex;
+//     justify-content: space-between;
+// }

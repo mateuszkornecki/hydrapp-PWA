@@ -60,9 +60,9 @@ buttonHistory.addEventListener('click', (e) => {
     // wypisuje historię tworząc nowe elementy listy
     for (let i = 0; i < localStorage.length; i++) {
         const li = document.createElement('li');
-        localStorage.getItem(localStorage.key(i));
         let localStorageKey = localStorage.key(i);
         let localStorageValue = localStorage.getItem(localStorage.key(i));
+        localStorage.getItem(localStorageKey);
         li.id = i;
         history.appendChild(li);
         li.textContent = `W dniu ${localStorageKey} wypiłeś ${localStorageValue} szklanki`;
