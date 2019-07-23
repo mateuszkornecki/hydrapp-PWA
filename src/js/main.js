@@ -28,7 +28,7 @@ let counterValue = 0;
 counterNumber.innerHTML = counterValue;
 
 
-// Jeśli pod kluczem niczego nie ma - przypisz 0 
+//Jeśli pod kluczem niczego nie ma - przypisz 0
 if (localStorage.length === 0) {
     localStorage.setItem(key, 0);
 }
@@ -60,8 +60,9 @@ buttonHistory.addEventListener('click', (e) => {
     // wypisuje historię tworząc nowe elementy listy
     for (let i = 0; i < localStorage.length; i++) {
         const li = document.createElement('li');
+        localStorage.getItem(localStorage.key(i));
         let localStorageKey = localStorage.key(i);
-        let localStorageValue = localStorage.getItem(key);
+        let localStorageValue = localStorage.getItem(localStorage.key(i));
         li.id = i;
         history.appendChild(li);
         li.textContent = `W dniu ${localStorageKey} wypiłeś ${localStorageValue} szklanki`;
