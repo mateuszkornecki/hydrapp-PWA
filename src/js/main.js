@@ -16,14 +16,14 @@ if ('serviceWorker' in navigator) {
 
 // place your code below
 
-const counterNumber = document.querySelector(".counter__number--js");
-const buttonAdd = document.querySelector(".button__add--js");
-const buttonRemove = document.querySelector(".button__remove--js");
-const buttonHistory = document.querySelector(".button__history--js");
-const buttonClose = document.querySelector(".button__close--js");
+const counterNumber = document.querySelector(".counter__value--js");
+const buttonAdd = document.querySelector(".button-add--js");
+const buttonRemove = document.querySelector(".button-remove--js");
+const buttonHistory = document.querySelector(".button-history--js");
+const buttonClose = document.querySelector(".button-close--js");
 const key = new Date().toISOString().slice(0, 10)
-const history = document.querySelector(".history");
-const toggleHistory = document.querySelector(".wrapper--js");
+const history = document.querySelector(".history--js");
+const historyList = document.querySelector(".history__list");
 let counterValue = 0;
 counterNumber.innerHTML = counterValue;
 
@@ -55,8 +55,8 @@ buttonRemove.addEventListener('click', (e) => {
 
 
 buttonHistory.addEventListener('click', (e) => {
-    toggleHistory.classList.toggle('wrapper--visible');
-    history.innerHTML = "";
+    history.classList.toggle('history--visible');
+    historyList.innerHTML = "";
     // wypisuje historię tworząc nowe elementy listy
     for (let i = 0; i < localStorage.length; i++) {
         const li = document.createElement('li');
@@ -64,12 +64,12 @@ buttonHistory.addEventListener('click', (e) => {
         let localStorageValue = localStorage.getItem(localStorage.key(i));
         localStorage.getItem(localStorageKey);
         li.id = i;
-        history.appendChild(li);
+        historyList.appendChild(li);
         li.textContent = `W dniu ${localStorageKey} wypiłeś ${localStorageValue} szklanki`;
     }
 
 })
 
 buttonClose.addEventListener('click', (e) => {
-    toggleHistory.classList.toggle('wrapper--visible');
+    history.classList.toggle('history--visible');
 })
