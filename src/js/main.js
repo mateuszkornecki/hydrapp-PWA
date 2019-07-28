@@ -39,7 +39,6 @@ buttonAdd.addEventListener('click', (e) => {
     //! localStorage.getItem(key) is a string, it have to be parse to a number
     const currentValue = parseInt(localStorage.getItem(key));
     if (currentValue < 99) {
-        // counterValue.innerHTML++;
         localStorage.setItem(key, currentValue + 1);
         counterValue.innerHTML = currentValue;
 
@@ -51,7 +50,6 @@ buttonAdd.addEventListener('click', (e) => {
 buttonRemove.addEventListener('click', (e) => {
     const currentValue = parseInt(localStorage.getItem(key));
     if (currentValue > 0) {
-        // counterValue.innerHTML--;
         localStorage.setItem(key, currentValue - 1);
         counterValue.innerHTML = currentValue;
     } else {
