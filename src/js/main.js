@@ -36,11 +36,11 @@ if (localStorage.getItem(key)) {
 }
 
 buttonAdd.addEventListener('click', (e) => {
-    //! localStorage.getItem(key) is a string, it have to be parse to a number
+    // localStorage.getItem(key) is a string, it have to be parse to a number
     const currentValue = parseInt(localStorage.getItem(key));
     if (currentValue < 99) {
         localStorage.setItem(key, currentValue + 1);
-        counterValue.innerHTML = currentValue;
+        counterValue.innerHTML = parseInt(localStorage.getItem(key));
 
     } else {
         console.log('Nie możliwe!')
@@ -51,7 +51,7 @@ buttonRemove.addEventListener('click', (e) => {
     const currentValue = parseInt(localStorage.getItem(key));
     if (currentValue > 0) {
         localStorage.setItem(key, currentValue - 1);
-        counterValue.innerHTML = currentValue;
+        counterValue.innerHTML = parseInt(localStorage.getItem(key));
     } else {
         console.log('Nie wypiłeś nawet jednej szklanki!');
     }
