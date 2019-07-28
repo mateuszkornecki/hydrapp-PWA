@@ -29,7 +29,7 @@ counterValue.innerHTML = 0;
 // setting counterValue.innerHTML to your last entered value
 // else create new record = 0
 if (localStorage.getItem(key)) {
-    counterValue.innerHTML = localStorage.getItem(key);
+    counterValue.innerHTML = parseInt(localStorage.getItem(key));
 } else {
     localStorage.setItem(key, 0);
     counterValue.innerHTML = 0;
