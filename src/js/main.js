@@ -16,7 +16,7 @@ if ('serviceWorker' in navigator) {
 
 // place your code below
 
-const counterNumber = document.querySelector(".counter__value--js");
+let counterValue = document.querySelector(".counter__value--js");
 const buttonAdd = document.querySelector(".button-add--js");
 const buttonRemove = document.querySelector(".button-remove--js");
 const buttonHistory = document.querySelector(".button-history--js");
@@ -24,30 +24,34 @@ const buttonClose = document.querySelector(".button-close--js");
 const key = new Date().toISOString().slice(0, 10)
 const history = document.querySelector(".history--js");
 const historyList = document.querySelector(".history__list");
-let counterValue = 0;
-counterNumber.innerHTML = counterValue;
+counterValue.innerHTML = 0;
 
-
-//Jeśli pod kluczem niczego nie ma - przypisz 0
-if (localStorage.length === 0) {
+// setting counterValue.innerHTML to your last entered value
+// else create new record = 0
+if (localStorage.getItem(key)) {
+    console.log('tak');
+    counterValue.innerHTML = localStorage.getItem(key);
+} else {
+    console.log('nie');
     localStorage.setItem(key, 0);
+    counterValue.innerHTML = 0;
 }
 
+
+
 buttonAdd.addEventListener('click', (e) => {
-    if (counterValue < 99) {
-        counterNumber.innerHTML++;
-        counterValue++;
-        localStorage.setItem(key, counterValue);
+    if (counterValue.innerHTML < 99) {
+        counterValue.innerHTML++;
+        localStorage.setItem(key, counterValue.innerHTML);
     } else {
         console.log('Nie możliwe!')
     }
 })
 
 buttonRemove.addEventListener('click', (e) => {
-    if (counterValue > 0) {
-        counterNumber.innerHTML--;
-        counterValue--;
-        localStorage.setItem(key, counterValue);
+    if (counterValue.innerHTML > 0) {
+        counterValue.innerHTML--;
+        localStorage.setItem(key, counterValue.innerHTML);
     } else {
         console.log('Nie wypiłeś nawet jednej szklanki!');
     }
@@ -57,16 +61,22 @@ buttonRemove.addEventListener('click', (e) => {
 buttonHistory.addEventListener('click', (e) => {
     history.classList.toggle('history--visible');
     historyList.innerHTML = "";
-    // wypisuje historię tworząc nowe elementy listy
+    // push every localStorage key to the array, and sort them
+    const localStorageArray = [];
     for (let i = 0; i < localStorage.length; i++) {
-        const li = document.createElement('li');
         let localStorageKey = localStorage.key(i);
-        let localStorageValue = localStorage.getItem(localStorage.key(i));
-        localStorage.getItem(localStorageKey);
-        li.id = i;
-        historyList.appendChild(li);
-        li.textContent = `W dniu ${localStorageKey} wypiłeś ${localStorageValue} szklanki`;
+        localStorageArray.push(localStorage.key(i));
+        localStorageArray.sort();
     }
+    // then print the array (each record in new list element)
+    localStorageArray.forEach(key => {
+        let value = localStorage.getItem(key);
+        const li = document.createElement('li');
+        li.id = key;
+        historyList.appendChild(li);
+        li.textContent = `W dniu ${key} wypiłeś ${value} szklanki`;
+        console.log(`W dniu ${key} wypiłeś ${value} szklanki`);
+    })
 
 })
 
