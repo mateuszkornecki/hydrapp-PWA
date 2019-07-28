@@ -29,29 +29,31 @@ counterValue.innerHTML = 0;
 // setting counterValue.innerHTML to your last entered value
 // else create new record = 0
 if (localStorage.getItem(key)) {
-    console.log('tak');
     counterValue.innerHTML = localStorage.getItem(key);
 } else {
-    console.log('nie');
     localStorage.setItem(key, 0);
     counterValue.innerHTML = 0;
 }
 
-
-
 buttonAdd.addEventListener('click', (e) => {
-    if (counterValue.innerHTML < 99) {
-        counterValue.innerHTML++;
-        localStorage.setItem(key, counterValue.innerHTML);
+    //! localStorage.getItem(key) is a string, it have to be parse to a number
+    const currentValue = parseInt(localStorage.getItem(key));
+    if (currentValue < 99) {
+        // counterValue.innerHTML++;
+        localStorage.setItem(key, currentValue + 1);
+        counterValue.innerHTML = currentValue;
+
     } else {
         console.log('Nie możliwe!')
     }
 })
 
 buttonRemove.addEventListener('click', (e) => {
-    if (counterValue.innerHTML > 0) {
-        counterValue.innerHTML--;
-        localStorage.setItem(key, counterValue.innerHTML);
+    const currentValue = parseInt(localStorage.getItem(key));
+    if (currentValue > 0) {
+        // counterValue.innerHTML--;
+        localStorage.setItem(key, currentValue - 1);
+        counterValue.innerHTML = currentValue;
     } else {
         console.log('Nie wypiłeś nawet jednej szklanki!');
     }
@@ -61,7 +63,7 @@ buttonRemove.addEventListener('click', (e) => {
 buttonHistory.addEventListener('click', (e) => {
     history.classList.toggle('history--visible');
     historyList.innerHTML = "";
-    // push every localStorage key to the array, and sort them
+    // push every localStorage.key to the array, and sort them
     const localStorageArray = [];
     for (let i = 0; i < localStorage.length; i++) {
         let localStorageKey = localStorage.key(i);
