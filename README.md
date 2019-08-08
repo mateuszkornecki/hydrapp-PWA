@@ -17,6 +17,7 @@ Total amound of drunk glasses will be saved in Local Storage under a key with th
 - Media queries
 - Local Storage
 - JS: DOM manipulations
+- PWA
 - Git
 - Figma
 
