@@ -75,7 +75,6 @@ buttonHistory.addEventListener('click', (e) => {
         li.id = key;
         historyList.appendChild(li);
         li.textContent = `W dniu ${key} wypiłeś ${value} szklanki`;
-        console.log(`W dniu ${key} wypiłeś ${value} szklanki`);
     })
 
 })
